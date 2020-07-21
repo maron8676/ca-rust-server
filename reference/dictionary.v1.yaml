@@ -1,0 +1,37 @@
+openapi: 3.0.0
+info:
+  title: dictionary
+  version: '1.0'
+  description: dictionary
+  contact:
+    name: maron8676
+servers:
+  - url: 'http://localhost:8000'
+paths:
+  /words:
+    get:
+      summary: Your GET endpoint
+      tags:
+        - words
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  type: object
+                  properties:
+                    text:
+                      type: string
+              examples:
+                example-1:
+                  value:
+                    - text: aaa
+      operationId: get-words
+      description: get-words
+components:
+  schemas: {}
+tags:
+  - name: words
